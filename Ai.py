@@ -3,7 +3,7 @@ import openai
 import googletrans
 
 translator=googletrans.Translator()
-openai.api_key = "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"
+openai.api_key = "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"
 
 messages = []
 username = input("ai : 당신의 이름을 입력해주세요.\n당신의 이름 : ")
