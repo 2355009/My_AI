@@ -13,11 +13,8 @@ while True:
         break
     user_content=translator.translate(user_content,dest="en",src="ko").text#정확성 확장을 위해 번역을 함
     messages.append({"role": "user", "content": f"{user_content}"})
-
     completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=messages)
-
     assistant_content = completion.choices[0].message["content"].strip()
-
     messages.append({"role": "assistant", "content": f"{assistant_content}"})
     assistant_content=translator.translate(assistant_content,dest="ko",src="en").text#한국어로 번역함
     print(f"ai : {assistant_content}\n")
